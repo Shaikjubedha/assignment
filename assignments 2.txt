@@ -1,0 +1,17 @@
+program-1
+numbers=[1,2,4,5]
+n=len(numbers)+1
+totalsum=n*(n+1)//2
+sum=0
+for i in range
+ sum=sum+i
+print(totalsum-sum)
+output:3
+program-2
+def digit_sum(number):
+return sum(int(digit) for digit in str(number)
+L=[123,456,789,566,501,105,1113,33,6,321]
+k=6
+for item in k:
+if digit_sum(item)==k:
+print(item)

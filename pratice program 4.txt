@@ -1,0 +1,18 @@
+import re
+def count_vowel_words(paragraph):
+    words = re.findall(r'\b[a-zA-Z]+\b', paragraph)
+    word_counts = {}
+    def starts_and_ends_with_vowel(word):
+        return re.match(r'^[aeiouAEIOU].*[aeiouAEIOU]$', word) is not None
+    for word in words:
+        if starts_and_ends_with_vowel(word):
+            word = word.lower()  # Convert to lowercase for case insensitivity
+            if word in word_counts:
+                word_counts[word] += 1
+            else:
+                word_counts[word] = 1
+    return word_counts
+sample_paragraph = "Data engineers build systems for collecting, validating, and preparing that high-quality data"
+result = count_vowel_words(sample_paragraph)
+for word, count in result.items():
+    print(f"{word}: {count}")

@@ -1,0 +1,18 @@
+from datetime import datetime
+listDates = ["15-08-1947", "14-04-2023", "04-12-1997", "25-10-2020", "01-01-1800", "12-12-2012", "31-12-2020", "43-13-2023", "18-03-1934", "26-07-1999", "26-03-1998"]
+valid_dates = []
+invalid_dates = []
+for date_str in listDates:
+    try:
+        date_obj = datetime.strptime(date_str, "%d-%m-%Y")
+        valid_dates.append(date_obj)
+    except ValueError:
+        invalid_dates.append(date_str)
+valid_dates.sort()
+print("Dates in ascending order:")
+for date in valid_dates:
+    print(date.strftime("%d-%m-%Y"))
+if invalid_dates:
+    print("\nInvalid dates:")
+    for invalid_date in invalid_dates:
+        print(invalid_date)

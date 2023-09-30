@@ -1,0 +1,5 @@
+from pyspark.sql import SparkSession
+Spark=SparkSession.builder.appname('data).getocreator()
+df=spark.read.csv('phone.csv')
+df.['count of online and offline sales count in each countrt']
+df.show()

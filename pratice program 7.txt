@@ -1,0 +1,31 @@
+
+country_codes = {
+    '+1': 'United States',
+    '+44': 'United Kingdom',
+    '+61': 'Australia',
+    '+91': 'India',
+}
+
+phone_numbers = [
+    '+1 123-456-7890',
+    '+44 20 1234 5678',
+    '+61 2 1234 5678',
+    '+91 12345 67890',
+    '+1 987-654-3210',
+]
+
+
+segregated_numbers = {country: [] for country in country_codes.values()}
+
+
+for number in phone_numbers:
+    country_code = number.split()[0]
+    if country_code in country_codes:
+        country_name = country_codes[country_code]
+        segregated_numbers[country_name].append(number)
+
+for country, numbers in segregated_numbers.items():
+    print(f'{country}:')
+    for number in numbers:
+        print(number)
+    print()

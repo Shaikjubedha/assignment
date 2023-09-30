@@ -1,0 +1,28 @@
+import re
+email_list = [
+    "abc@gmail.com",
+    "xyz@gmail.com",
+    "help@instagram.com",
+    "support@shikshalokam.org",
+    "doe@example.com",
+    "user6@domain.com",
+]
+
+valid_email_counts = {}
+
+email_pattern = r'^[\w\.-]+@[\w\.-]+$'
+
+for email in email_list:
+    if re.match(email_pattern, email):
+        # Extract the domain from the valid email address
+        domain = email.split('@')[1]
+        if domain in valid_email_counts:
+            valid_email_counts[domain] += 1
+        else:
+            valid_email_counts[domain] = 1
+    else:
+       
+        print(f"Invalid email: {email}")
+
+for domain, count in valid_email_counts.items():
+    print(f"Domain: {domain}, Valid Email Count: {count}")

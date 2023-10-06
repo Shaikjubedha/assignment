@@ -1,5 +1,4 @@
 from pySpark.sql import Sparksession
 Spark=SparkSession.builder.appName('data').getOcreate()
 df=Spark.read.csv('phone.csv')
-df.['country with max sales as per the data']
-df.show()
+df['country with max sales as per the data']

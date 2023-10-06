@@ -1,5 +1,4 @@
 from pySpark.sql import SparkSession
 Spark=SparkSession.builder.appName('data').getOcreate()
 df=Spark.read.csv('phone.csv')
-df.['product in bulgaria with most number of sales and its unit cost and find the total amount']
-df.show()
+df['product in bulgaria with most number of sales and its unit cost and find the total amount']

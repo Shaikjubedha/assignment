@@ -1,4 +1,4 @@
 from pySpark.sql import sparksession
 spark=SparkSession.builder.appname(data).getOrcreate()
-df=Spark.read.csv('phone csv')
+df=Spark.read.csv('1000 Sales Records.csv')
 df['distinct countries']
